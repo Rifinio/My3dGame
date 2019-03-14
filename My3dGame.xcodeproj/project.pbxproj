@@ -11,6 +11,7 @@
 		191B6A39223A535B006FFA56 /* Laser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 191B6A38223A535B006FFA56 /* Laser.mp3 */; };
 		191B6A3C223A5C33006FFA56 /* SceneKit Particle System.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 191B6A3A223A5C33006FFA56 /* SceneKit Particle System.scnp */; };
 		191B6A3D223A5C33006FFA56 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 191B6A3B223A5C33006FFA56 /* star.png */; };
+		1967656A223A5F9400E99781 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 19676569223A5F9400E99781 /* Explode.scnp */; };
 		199B6D33223A45650066D30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B6D32223A45650066D30E /* AppDelegate.swift */; };
 		199B6D35223A45650066D30E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B6D34223A45650066D30E /* art.scnassets */; };
 		199B6D37223A45650066D30E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B6D36223A45650066D30E /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		191B6A38223A535B006FFA56 /* Laser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Laser.mp3; sourceTree = "<group>"; };
 		191B6A3A223A5C33006FFA56 /* SceneKit Particle System.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = "SceneKit Particle System.scnp"; sourceTree = "<group>"; };
 		191B6A3B223A5C33006FFA56 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		19676569223A5F9400E99781 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
 		199B6D2F223A45650066D30E /* My3dGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My3dGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B6D32223A45650066D30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199B6D34223A45650066D30E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		199B6D31223A45650066D30E /* My3dGame */ = {
 			isa = PBXGroup;
 			children = (
+				19676569223A5F9400E99781 /* Explode.scnp */,
 				199B6D32223A45650066D30E /* AppDelegate.swift */,
 				199B6D36223A45650066D30E /* ViewController.swift */,
 				191B6A36223A5350006FFA56 /* Explosion.mp3 */,
@@ -172,6 +175,7 @@
 				199B6D35223A45650066D30E /* art.scnassets in Resources */,
 				199B6D3F223A45670066D30E /* LaunchScreen.storyboard in Resources */,
 				199B6D3C223A45670066D30E /* Assets.xcassets in Resources */,
+				1967656A223A5F9400E99781 /* Explode.scnp in Resources */,
 				191B6A3D223A5C33006FFA56 /* star.png in Resources */,
 				191B6A37223A5350006FFA56 /* Explosion.mp3 in Resources */,
 				199B6D3A223A45650066D30E /* Main.storyboard in Resources */,

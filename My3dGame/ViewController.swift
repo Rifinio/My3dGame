@@ -46,6 +46,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         contact.nodeA.removeFromParentNode()
         contact.nodeB.removeFromParentNode()
         playExplosionSound()
+        createExplosion(contact.nodeA.position)
         
         addNewTieFighter()
     }
@@ -64,6 +65,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         sceneView.scene.rootNode.addChildNode(fighter)
         animate(fighter: fighter)
     }
+    
+    func createExplosion(_ position: SCNVector3) {
+        let particleSystem = SCNParticleSystem(named: "Explode.scnp", inDirectory: nil)!
+        let systemNode = SCNNode()
+        systemNode.addParticleSystem(particleSystem)
+        systemNode.position = position
+        sceneView.scene.rootNode.addChildNode(systemNode)
+    }
+    
 
     func playLazerSound() {
         Sound.play(file: "Laser.mp3")
@@ -151,17 +161,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         // Pause the view's session
         sceneView.session.pause()
     }
-
-    // MARK: - ARSCNViewDelegate
-
-    /*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
 
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
