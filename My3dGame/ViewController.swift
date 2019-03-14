@@ -24,10 +24,53 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+//        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+//        scene.rootNode.position.z = -10 // 10 meteres down
+        
+//        let scene = SCNScene()
         
         // Set the scene to the view
-        sceneView.scene = scene
+        sceneView.scene = SCNScene()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let node = SCNNode()
+        
+        let box = SCNBox(width: 0.1, height: 0.1, length: 2, chamferRadius: 0)
+        box.firstMaterial?.diffuse.contents = UIColor.red
+        box.firstMaterial?.lightingModel = .constant
+        
+        node.geometry = box
+        node.opacity = 0.5
+        
+        if let pov = sceneView.pointOfView {
+            node.position = pov.position
+            node.position.y -= 0.3
+            node.eulerAngles = pov.eulerAngles
+        }
+        
+        
+        addPhysics(node)
+        animate(laser: node)
+        sceneView.scene.rootNode.addChildNode(node)
+        
+    }
+    
+    private func addPhysics(_ laser: SCNNode) {
+        let shape = SCNPhysicsShape(geometry: laser.geometry!, options: nil)
+        laser.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
+        laser.physicsBody?.isAffectedByGravity = false
+    }
+    
+    private func animate(laser: SCNNode) {
+        guard let frame = self.sceneView.session.currentFrame else {
+            return
+        }
+        
+        let matrix = SCNMatrix4(frame.camera.transform)
+        let speed: Float = -5
+        let direction = SCNVector3(speed * matrix.m31, speed * matrix.m32, speed * matrix.m33)
+        laser.physicsBody?.applyForce(direction, asImpulse: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
