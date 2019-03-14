@@ -13,6 +13,7 @@
 		199B6D3A223A45650066D30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B6D38223A45650066D30E /* Main.storyboard */; };
 		199B6D3C223A45670066D30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B6D3B223A45670066D30E /* Assets.xcassets */; };
 		199B6D3F223A45670066D30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B6D3D223A45670066D30E /* LaunchScreen.storyboard */; };
+		199B6D48223A46740066D30E /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B6D47223A46740066D30E /* ARKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		199B6D3B223A45670066D30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199B6D3E223A45670066D30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199B6D40223A45670066D30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		199B6D47223A46740066D30E /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199B6D48223A46740066D30E /* ARKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				199B6D31223A45650066D30E /* My3dGame */,
 				199B6D30223A45650066D30E /* Products */,
+				199B6D46223A46740066D30E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				199B6D40223A45670066D30E /* Info.plist */,
 			);
 			path = My3dGame;
+			sourceTree = "<group>";
+		};
+		199B6D46223A46740066D30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				199B6D47223A46740066D30E /* ARKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7GR2VXMGN4;
+				DEVELOPMENT_TEAM = 3C452QTX5Z;
 				INFOPLIST_FILE = My3dGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,7 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7GR2VXMGN4;
+				DEVELOPMENT_TEAM = 3C452QTX5Z;
 				INFOPLIST_FILE = My3dGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
