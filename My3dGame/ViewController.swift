@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import SwiftySound
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -33,7 +34,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = SCNScene()
     }
     
+    func playLazerSound() {
+        Sound.play(file: "Laser.mp3")
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+//        let touch = touches.first!
+//        let location = touch.location(in: view)
+        
         let node = SCNNode()
         
         let box = SCNBox(width: 0.1, height: 0.1, length: 2, chamferRadius: 0)
@@ -52,8 +61,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         addPhysics(node)
         animate(laser: node)
+        playLazerSound()
         sceneView.scene.rootNode.addChildNode(node)
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            node.removeFromParentNode()
+        }
     }
     
     private func addPhysics(_ laser: SCNNode) {

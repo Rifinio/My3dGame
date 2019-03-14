@@ -14,9 +14,11 @@
 		199B6D3C223A45670066D30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199B6D3B223A45670066D30E /* Assets.xcassets */; };
 		199B6D3F223A45670066D30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199B6D3D223A45670066D30E /* LaunchScreen.storyboard */; };
 		199B6D48223A46740066D30E /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B6D47223A46740066D30E /* ARKit.framework */; };
+		B78808C43415D09EB93C81FC /* Pods_My3dGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F568B5176A485FAEC9D3846 /* Pods_My3dGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		034CEB471D3790034EBFCE73 /* Pods-My3dGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My3dGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My3dGame/Pods-My3dGame.debug.xcconfig"; sourceTree = "<group>"; };
 		199B6D2F223A45650066D30E /* My3dGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My3dGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199B6D32223A45650066D30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199B6D34223A45650066D30E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		199B6D3E223A45670066D30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199B6D40223A45670066D30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		199B6D47223A46740066D30E /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		5F33DC6714D4CDEBD9B17ED8 /* Pods-My3dGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My3dGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-My3dGame/Pods-My3dGame.release.xcconfig"; sourceTree = "<group>"; };
+		8F568B5176A485FAEC9D3846 /* Pods_My3dGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My3dGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				199B6D48223A46740066D30E /* ARKit.framework in Frameworks */,
+				B78808C43415D09EB93C81FC /* Pods_My3dGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,7 @@
 				199B6D31223A45650066D30E /* My3dGame */,
 				199B6D30223A45650066D30E /* Products */,
 				199B6D46223A46740066D30E /* Frameworks */,
+				A6757F08970B1DC8A7617DD9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,8 +81,18 @@
 			isa = PBXGroup;
 			children = (
 				199B6D47223A46740066D30E /* ARKit.framework */,
+				8F568B5176A485FAEC9D3846 /* Pods_My3dGame.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6757F08970B1DC8A7617DD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				034CEB471D3790034EBFCE73 /* Pods-My3dGame.debug.xcconfig */,
+				5F33DC6714D4CDEBD9B17ED8 /* Pods-My3dGame.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 199B6D43223A45670066D30E /* Build configuration list for PBXNativeTarget "My3dGame" */;
 			buildPhases = (
+				C909CCFBA17F7FDC604A5C30 /* [CP] Check Pods Manifest.lock */,
 				199B6D2B223A45650066D30E /* Sources */,
 				199B6D2C223A45650066D30E /* Frameworks */,
 				199B6D2D223A45650066D30E /* Resources */,
+				66A11FF38C29273A457745A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,6 +163,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66A11FF38C29273A457745A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-My3dGame/Pods-My3dGame-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My3dGame/Pods-My3dGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C909CCFBA17F7FDC604A5C30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My3dGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		199B6D2B223A45650066D30E /* Sources */ = {
@@ -296,6 +361,7 @@
 		};
 		199B6D44223A45670066D30E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 034CEB471D3790034EBFCE73 /* Pods-My3dGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +380,7 @@
 		};
 		199B6D45223A45670066D30E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F33DC6714D4CDEBD9B17ED8 /* Pods-My3dGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
