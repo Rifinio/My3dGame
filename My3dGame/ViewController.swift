@@ -11,7 +11,15 @@ import SceneKit
 import ARKit
 import SwiftySound
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+
+struct  CollisionCategory: OptionSet {
+    public let rawValue: Int
+    
+    public static let laser = CollisionCategory(rawValue: 1 << 1)
+    public static let fighter = CollisionCategory(rawValue: 1 << 2)
+}
+
+class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
 
@@ -26,18 +34,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
 
-        // Create a new scene
-//        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-//        scene.rootNode.position.z = -10 // 10 meteres down
-
-//        let scene = SCNScene()
-
         // Set the scene to the view
         sceneView.scene = SCNScene()
         sceneView.autoenablesDefaultLighting = true
-
-//        sceneView.scene.phy
+        
+        sceneView.scene.physicsWorld.contactDelegate = self
         addNewTieFighter()
+    }
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didEnd contact: SCNPhysicsContact) {
+        contact.nodeA.removeFromParentNode()
+        contact.nodeB.removeFromParentNode()
     }
 
     func addNewTieFighter() {
@@ -45,6 +52,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let posX = Float.random(in: -1...1)
         let posY = Float.random(in: -1...1)
         fighter.position = SCNVector3(posX, posY, -10)
+        
+        fighter.physicsBody = SCNPhysicsBody.dynamic()
+        fighter.physicsBody?.isAffectedByGravity = false
+        fighter.physicsBody?.categoryBitMask = CollisionCategory.fighter.rawValue
+        fighter.physicsBody?.contactTestBitMask = CollisionCategory.laser.rawValue
 
         sceneView.scene.rootNode.addChildNode(fighter)
         animate(fighter: fighter)
@@ -89,6 +101,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let shape = SCNPhysicsShape(geometry: laser.geometry!, options: nil)
         laser.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         laser.physicsBody?.isAffectedByGravity = false
+        
+        laser.physicsBody?.categoryBitMask = CollisionCategory.laser.rawValue
+        laser.physicsBody?.contactTestBitMask = CollisionCategory.fighter.rawValue
+        laser.physicsBody?.collisionBitMask = CollisionCategory.fighter.rawValue
     }
 
     private func animate(laser: SCNNode) {
