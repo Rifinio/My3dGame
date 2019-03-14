@@ -45,6 +45,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
     func physicsWorld(_ world: SCNPhysicsWorld, didEnd contact: SCNPhysicsContact) {
         contact.nodeA.removeFromParentNode()
         contact.nodeB.removeFromParentNode()
+        playExplosionSound()
+        
+        addNewTieFighter()
     }
 
     func addNewTieFighter() {
@@ -64,6 +67,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 
     func playLazerSound() {
         Sound.play(file: "Laser.mp3")
+    }
+    
+    func playExplosionSound() {
+        Sound.play(file: "Explosion.mp3")
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
